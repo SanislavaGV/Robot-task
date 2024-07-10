@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Robots tasks: </title>
+    <link rel="stylesheet" href="task2.css">
+    
+    
+    <style>
+        body {
+            background-image: url(background.jpg);
+            background-size: cover; /* за да покрие целия екран */
+            background-repeat: no-repeat; /* за да не се повтаря */
+            background-position: center; /* за да е центрирана */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: white;
+        }
+        h2 {
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Robots Tasks</h1>
+    <table>
+        <tr>
+            <td colspan="2">
+                <form id="task-form">
+                    <input type="text" id="location" placeholder="Location" required>
+                    <input type="text" id="actions" placeholder="Actions" required>
+                    <button type="submit">Add tasks</button>
+                </form>
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2"><h2>Free robots</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form id="robot-form">
+                    <input type="text" id="robot-name" placeholder="Robot name" required>
+                    <button type="submit">Add robots</button>
+                </form>
+                <ul id="robot-list-free"></ul>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><h2>Start point</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form id="start-point-list">
+                    <input type="text" id="start-point-input" placeholder="Start point" required>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><h2>End point</h2></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form id="end-point-list">
+                    <input type="text" id="end-point-input" placeholder="End point" required>
+                    <button type="submit">Add path</button>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <script>
+                    function changeSVGColor()
+                    {
+                      var circleElement = document.getElementById("StatusCircle");
+                      
+                      if (circleElement != undefined)
+                      {
+                          console.log(circleElement);
+                          circleElement.style.fill = "#FF1D8D";
+                      }
+                    }
+
+                    function updateCirclePosition(event) {
+                            var circleElement = document.getElementById("StatusCircle");
+                            if (circleElement != undefined) {
+                                var yPos = event.clientY;
+                                circleElement.setAttribute("cy", yPos / 10); // Adjust the divisor to fit the SVG viewBox
+                            }
+                        }
+                  </script>
+
+
+<div class="circle-container">
+    <h1>
+        <button onclick="changeSVGColor()">Change Color</button>
+        </h1>
+      <svg
+         width="100mm"
+         height="20mm"
+         viewBox="0 0 100 10"
+         
+         id="svgCircle"
+         inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+         sodipodi:docname="circle.svg"
+         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:svg="http://www.w3.org/2000/svg">
+        <sodipodi:namedview
+           id="namedview7"
+           pagecolor="#505050"
+           bordercolor="#eeeeee"
+           borderopacity="1"
+           inkscape:showpageshadow="0"
+           inkscape:pageopacity="0"
+           inkscape:pagecheckerboard="0"
+           inkscape:deskcolor="#505050"
+           inkscape:document-units="mm"
+           showgrid="false"
+           inkscape:zoom="10.61303"
+           inkscape:cx="246.91347"
+           inkscape:cy="274.3797"
+           inkscape:window-width="2560"
+           inkscape:window-height="1361"
+           inkscape:window-x="-9"
+           inkscape:window-y="-9"
+           inkscape:window-maximized="1"
+           inkscape:current-layer="layer1" />
+        <defs
+           id="defs2" />
+        <g
+           inkscape:label="Layer 1"
+           inkscape:groupmode="layer"
+           id="layer1">
+          <circle
+             style="fill:#FF0000;stroke:#000000;stroke-width:0.04181"
+             id="StatusCircle"
+             cx="10"
+             cy="10"
+             r="5" />
+             
+        </g>
+        
+      </svg>
+
+            </td>
+        </tr>
+    </table>
+</div>
+        
+    
+        <script>src="task2.js"</script>
+        
+    </div>
+
+    </div>
+  
+  
+    
+</body>
+</html>
